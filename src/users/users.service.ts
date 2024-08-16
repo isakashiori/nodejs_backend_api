@@ -3,7 +3,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UsersService {
-  private readonly users: CreateUserDto[] = [];
+  private users: CreateUserDto[] = [];
 
   findAll(): CreateUserDto[] {
     return this.users;
@@ -11,5 +11,13 @@ export class UsersService {
 
   create(user: CreateUserDto) {
     this.users.push(user)
+  }
+
+  findOne(id: number) {
+    return this.users.find((user) => user.id === id)
+  }
+
+  delete(id: number) {
+    return this.users =  this.users.filter(user => user.id !== id);
   }
 }
