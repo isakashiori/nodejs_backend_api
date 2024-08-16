@@ -12,4 +12,8 @@ export class UsersService {
   create(user: CreateUserDto) {
     this.users.push(user)
   }
+
+  findOne(id: number) {
+    return this.users.find((val) => val.id === id)
+  }
 }
