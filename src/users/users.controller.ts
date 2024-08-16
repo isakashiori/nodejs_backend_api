@@ -12,18 +12,15 @@ export class UsersController {
 
   // ユーザー一覧
   @Get()
-  findAll(): string {
+  findAll(): CreateUserDto[] {
     return this.usersService.findAll();
   }
 
   //　ユーザー登録
   @Post()
-  async create(@Body() createUserDto: CreateUserDto) {
-    return 'This action adds a new cat';
+  create(@Body() user: CreateUserDto) {
+    this.usersService.create(user);
   }
-  
-
-  // ユーザー詳細
   // @Get(':id')
 
   // ユーザー更新
