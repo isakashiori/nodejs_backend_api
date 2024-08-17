@@ -8,7 +8,7 @@ import { WorkOutMenusModule } from './work_out_menus/work_out_menus.module';
 
 @Module({
   imports: [UsersModule, WorkOutMenusModule],
-  controllers: [AppController, WorkOutMenusController],
+  controllers: [AppController],
   providers: [AppService, PrismaService],
 })
 export class AppModule {}
