@@ -8,31 +8,31 @@ export class WorkOutMenusController {
 
   constructor(private readonly womService:  WorkOutMenusService) {}
 
-  // ユーザー一覧
+  // メニュー一覧
   @Get()
   findAll(): Promise<WorkOutMenu[]> {
     return this.womService.findAll();
   }
 
-  // ユーザー登録
+  // メニュー登録
   @Post()
   create(@Body() user: CreateWorkOutMenurDto): Promise<WorkOutMenu> {
     return this.womService.create(user);
   }
 
-  // ユーザー詳細
+  // メニュー詳細
   @Get(':id')
   findOne(@Param('id') id: string): Promise<WorkOutMenu> {
     return this.womService.findOne(Number(id));
   }
 
-  ユーザー更新
+  // メニュー更新
   @Put(':id')
   update(@Param('id') id: string, @Body() user: CreateWorkOutMenurDto): Promise<WorkOutMenu> {
     return this.womService.update(Number(id), user);
   }
 
-  // ユーザー削除
+  // メニュー削除
   @Delete(':id')
   delete(@Param('id') id: string): Promise<WorkOutMenu> {
     return this.womService.delete(Number(id));
