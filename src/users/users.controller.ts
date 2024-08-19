@@ -29,7 +29,7 @@ export class UsersController {
     return this.usersService.findOne(Number(id));
   }
 
-  ユーザー更新
+  // ユーザー更新
   @Put(':id')
   update(@Param('id') id: string, @Body() user: CreateUserDto): Promise<User> {
     return this.usersService.update(Number(id), user);
